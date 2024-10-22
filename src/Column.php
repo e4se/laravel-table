@@ -11,6 +11,7 @@ use Okipa\LaravelTable\Traits\Column\HasStringLimit;
 use Okipa\LaravelTable\Traits\Column\HasTable;
 use Okipa\LaravelTable\Traits\Column\HasTitle;
 use Okipa\LaravelTable\Traits\Column\IsButton;
+use Okipa\LaravelTable\Traits\Column\IsHidden;
 use Okipa\LaravelTable\Traits\Column\IsLink;
 use Okipa\LaravelTable\Traits\Column\IsLinkedToDatabase;
 use Okipa\LaravelTable\Traits\Column\IsSearchable;
@@ -33,6 +34,7 @@ class Column
     use HasCustomHtml;
     use IsSortable;
     use IsSearchable;
+    use IsHidden;
 
     public function __construct(Table $table, string $dbField = null)
     {
