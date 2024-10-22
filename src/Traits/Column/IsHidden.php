@@ -15,4 +15,9 @@ trait IsHidden
         /** @var \Okipa\LaravelTable\Column $this */
         return $this;
     }
+
+    public function getHidden(): bool
+    {
+        return $this->is_hidden;
+    }
 }
