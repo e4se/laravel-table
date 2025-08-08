@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\HtmlString;
-use RuntimeException;
 
 if (! function_exists('html_classes')) {
     /**
@@ -25,7 +24,7 @@ if (! function_exists('html_classes')) {
                 case 'NULL':
                     break;
                 default:
-                    throw new RuntimeException(
+                    throw new \RuntimeException(
                         'Classes should be strings, integers, arrays or null: ' . gettype($arg) . ' given.'
                     );
             }
@@ -67,7 +66,7 @@ if (! function_exists('html_attributes')) {
                 case 'NULL':
                     break;
                 default:
-                    throw new RuntimeException(
+                    throw new \RuntimeException(
                         'The given attributes arguments should be strings or arrays: ' . gettype($arg) . ' type given.'
                     );
             }
