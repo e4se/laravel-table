@@ -3,7 +3,6 @@
 namespace Okipa\LaravelTable;
 
 use Illuminate\Support\ServiceProvider;
-use Okipa\LaravelHtmlHelper\HtmlHelperServiceProvider;
 use Okipa\LaravelTable\Console\Commands\MakeTable;
 
 class LaravelTableServiceProvider extends ServiceProvider
