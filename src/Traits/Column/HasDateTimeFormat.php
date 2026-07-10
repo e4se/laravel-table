@@ -10,7 +10,7 @@ trait HasDateTimeFormat
 
     protected ?string $timezone = null;
 
-    public function dateTimeFormat(string $dateTimeFormat, string $timezone = null): Column
+    public function dateTimeFormat(string $dateTimeFormat, ?string $timezone = null): Column
     {
         $this->dateTimeFormat = $dateTimeFormat;
         $this->timezone = $timezone;

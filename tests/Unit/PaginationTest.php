@@ -20,5 +20,12 @@ class PaginationTest extends LaravelTableTestCase
         ];
         $table = (new Table())->appendData($appended);
         self::assertEquals($table->getAppendedToPaginator(), $appended);
+        self::assertEquals([
+            'foo' => 'bar',
+            'baz[0]' => 'qux',
+            'baz[quux]' => 'corge',
+            'baz[1]' => 'grault',
+            7 => 'garply',
+        ], $table->getGeneratedHiddenFields());
     }
 }
