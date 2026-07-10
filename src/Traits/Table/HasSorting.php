@@ -41,7 +41,7 @@ trait HasSorting
 
     protected function getProcessedSortByValue(): ?string
     {
-        $requestSortByField = $this->getRequest()->get($this->getSortByField());
+        $requestSortByField = $this->getRequest()->query($this->getSortByField());
         if ($requestSortByField) {
             return $requestSortByField;
         }
@@ -56,7 +56,7 @@ trait HasSorting
 
     protected function getProcessedSortDirValue(): string
     {
-        $requestSortDirField = $this->getRequest()->get($this->getSortDirField());
+        $requestSortDirField = $this->getRequest()->query($this->getSortDirField());
         if ($requestSortDirField) {
             return $requestSortDirField;
         }

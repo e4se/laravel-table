@@ -111,10 +111,17 @@ class SortTest extends LaravelTableTestCase
     public function testSortByColumn(): void
     {
         $users = $this->createMultipleUsers(3);
-        $customRequest = (new Request())->merge([
+        $customRequest = new Request([
             (new Table())->getRowsNumberField() => 20,
             (new Table())->getSortByField() => 'email',
             (new Table())->getSortDirField() => 'desc',
+        ], [
+            (new Table())->getRowsNumberField() => 1,
+            (new Table())->getSortByField() => 'name',
+            (new Table())->getSortDirField() => 'asc',
+        ], [
+            (new Table())->getSortByField() => 'name',
+            (new Table())->getSortDirField() => 'asc',
         ]);
         $this->routes(['users'], ['index']);
         $table = (new Table())->model(User::class)

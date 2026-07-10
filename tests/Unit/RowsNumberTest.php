@@ -124,7 +124,11 @@ class RowsNumberTest extends LaravelTableTestCase
     public function testSetCustomRowsNumberFromRequest(): void
     {
         $this->createMultipleUsers(20);
-        $customRequest = (new Request())->merge([(new Table())->getRowsNumberField() => 10]);
+        $customRequest = new Request([(new Table())->getRowsNumberField() => 10], [
+            (new Table())->getRowsNumberField() => 1,
+        ], [
+            (new Table())->getRowsNumberField() => 1,
+        ]);
         $this->routes(['users'], ['index']);
         $table = (new Table())->model(User::class)
             ->routes(['index' => ['name' => 'users.index']])
