@@ -20,7 +20,7 @@ trait HasSearching
 
     protected function applySearchingOnQuery(Builder $query): void
     {
-        $searchedValue = $this->getRequest()->get($this->getSearchField());
+        $searchedValue = $this->getRequest()->query($this->getSearchField());
         if (! $searchedValue) {
             return;
         }

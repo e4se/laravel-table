@@ -20,6 +20,14 @@ class ColumnDeclarationTest extends LaravelTableTestCase
         self::assertEquals($columnAttribute, $table->getColumns()->first()->getDbField());
     }
 
+    public function testAddComputedColumn(): void
+    {
+        $table = (new Table())->model(User::class);
+        $table->column();
+
+        self::assertNull($table->getColumns()->first()->getDbField());
+    }
+
     public function testAddColumnWithAttributeAndNoTitleHtml(): void
     {
         $this->routes(['users'], ['index']);

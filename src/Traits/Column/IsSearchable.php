@@ -10,7 +10,7 @@ trait IsSearchable
 
     protected array $dbSearchedFields;
 
-    public function searchable(string $dbSearchedTable = null, array $dbSearchedFields = []): Column
+    public function searchable(?string $dbSearchedTable = null, array $dbSearchedFields = []): Column
     {
         $this->dbSearchedTable = $dbSearchedTable;
         $this->dbSearchedFields = $dbSearchedFields;

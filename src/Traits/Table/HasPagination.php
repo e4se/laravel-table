@@ -26,10 +26,10 @@ trait HasPagination
         return $this;
     }
 
-    protected function generateHiddenInputsArray(array $data = [], string $prefix = null): array
+    protected function generateHiddenInputsArray(array $data = [], ?string $prefix = null): array
     {
         $inputsArray = [];
-        $prefix = trim($prefix);
+        $prefix = trim($prefix ?? '');
         foreach ($data as $key => $value) {
             if ($prefix) {
                 $key = $prefix . "[{$key}]";

@@ -36,7 +36,7 @@ class Column
     use IsSearchable;
     use IsHidden;
 
-    public function __construct(Table $table, string $dbField = null)
+    public function __construct(Table $table, ?string $dbField = null)
     {
         $this->initializeTable($table);
         $this->initializeDatabaseLink($table, $dbField);
